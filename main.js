@@ -19,6 +19,9 @@
 
 
   // ページの読み込みが完了したらクイズ情報を取得する
+  window.addEventListener('load', () => {
+    fetchQuizData();
+  });
 
 
   // 「Restart」ボタンをクリックしたら再度クイズデータを取得する
@@ -42,6 +45,14 @@
   //   - 無し
   // - 戻り値
   //   - 無し
+  const fetchQuizData = () => {
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(data => {
+        // TODO: 別のタスクでこのクイズデータを利用する
+        // タスク内容 : https://github.com/duyoji/js_excercise_for_frontend_8/issues/5
+      });
+  };
 
 
   // setNextQuiz関数を実装する
